@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizzarella Artesanal | Pizza artesanal en Girardota</title>
+  <meta name="description" content="Pizzarella Artesanal en Girardota, Antioquia. Pizza artesanal, calzone, hamburguesas y más. Pedidos, domicilios y reservas por WhatsApp." />
+  <meta name="theme-color" content="#15110d" />
+  <meta property="og:title" content="Pizzarella Artesanal | Girardota" />
+  <meta property="og:description" content="Pizza artesanal con sabor local. Pide por WhatsApp o visítanos en Carrera 14 #7-96, Girardota." />
+  <style>
+    :root{
+      --ink:#17110c;
+      --ink-2:#261c14;
+      --cream:#f6efe2;
+      --paper:#fffaf2;
+      --tomato:#c64027;
+      --tomato-dark:#9e2b18;
+      --olive:#55604b;
+      --gold:#d9a441;
+      --muted:#7d6f63;
+      --line:rgba(23,17,12,.14);
+      --radius:24px;
+      --shadow:0 22px 50px rgba(49,32,20,.14);
+      --display: Georgia, 'Times New Roman', serif;
+      --sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    button,a{touch-action:manipulation}
+    .wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+    .eyebrow{font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;color:var(--tomato)}
+    .section-title{font-family:var(--display);font-size:clamp(2.4rem,5vw,4.8rem);line-height:.96;letter-spacing:-.045em;margin:.15em 0 .35em}
+    .lede{font-size:clamp(1.05rem,2vw,1.25rem);color:#65584d;max-width:700px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;min-height:52px;padding:0 22px;border-radius:999px;font-weight:800;border:1px solid transparent;transition:.2s ease;white-space:nowrap}
+    .btn-primary{background:var(--tomato);color:#fff;box-shadow:0 10px 26px rgba(198,64,39,.25)}
+    .btn-primary:hover,.btn-primary:focus-visible{background:var(--tomato-dark);transform:translateY(-2px)}
+    .btn-light{background:#fff;color:var(--ink);border-color:rgba(255,255,255,.5)}
+    .btn-outline{border-color:var(--line);background:transparent}
+    .btn:focus-visible,.nav-link:focus-visible{outline:3px solid rgba(217,164,65,.7);outline-offset:3px}
+
+    .topbar{background:var(--ink);color:#f8f1e8;font-size:.9rem}
+    .topbar .wrap{display:flex;justify-content:space-between;gap:20px;padding:9px 0;align-items:center}
+    .topbar span:last-child{opacity:.75}
+    .nav{position:sticky;top:0;z-index:50;background:rgba(246,239,226,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(23,17,12,.08)}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.03em}
+    .brand-mark{width:40px;height:40px;border-radius:50%;background:var(--tomato);position:relative;box-shadow:inset 0 0 0 6px #f5d89f}
+    .brand-mark:before,.brand-mark:after{content:"";position:absolute;background:#f5d89f;border-radius:50%}
+    .brand-mark:before{width:6px;height:6px;left:9px;top:10px;box-shadow:12px 4px 0 #f5d89f,5px 15px 0 #f5d89f,18px 17px 0 #f5d89f}
+    .brand-mark:after{width:4px;height:4px;right:8px;top:9px}
+    .brand strong{font-family:var(--display);font-size:1.35rem}
+    .nav-links{display:flex;gap:26px;align-items:center}
+    .nav-link{font-size:.94rem;font-weight:700;color:#4d4137}
+    .nav-toggle{display:none;border:0;background:none;font-size:1.5rem}
+
+    .hero{min-height:760px;background:var(--ink);color:#fff;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:
+      radial-gradient(circle at 75% 35%,rgba(217,164,65,.22),transparent 32%),
+      radial-gradient(circle at 15% 5%,rgba(198,64,39,.22),transparent 26%)}
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center;min-height:760px;padding:68px 0 78px}
+    .hero h1{font-family:var(--display);font-size:clamp(4.2rem,8.5vw,7.6rem);line-height:.82;letter-spacing:-.06em;margin:.15em 0 .22em;max-width:720px}
+    .hero h1 em{color:#efb54c;font-weight:400}
+    .hero-copy{font-size:1.13rem;color:#e0d3c7;max-width:620px;margin-bottom:28px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+    .hero-facts{display:flex;flex-wrap:wrap;gap:10px 24px;color:#d8cabd;font-size:.95rem}
+    .hero-facts span{display:flex;align-items:center;gap:8px}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+    .hero-visual{position:relative;min-height:610px}
+    .photo-frame{position:absolute;inset:0 0 0 50px;border-radius:220px 220px 32px 32px;overflow:hidden;background:#33251b;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+    .photo-frame img{width:100%;height:100%;object-fit:cover;filter:saturate(.95) contrast(1.03)}
+    .photo-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(15,8,4,.35))}
+    .award-card{position:absolute;left:0;bottom:42px;width:235px;background:var(--paper);color:var(--ink);padding:20px;border-radius:20px;box-shadow:var(--shadow);transform:rotate(-3deg);z-index:2}
+    .award-card .big{font-family:var(--display);font-size:2.1rem;line-height:1;color:var(--tomato);margin-bottom:7px}
+    .award-card p{margin:0;color:#65584d;font-size:.93rem}
+    .ref-label{position:absolute;right:14px;bottom:14px;z-index:3;background:rgba(23,17,12,.72);color:#fff;padding:6px 10px;border-radius:999px;font-size:.7rem;backdrop-filter:blur(8px)}
+
+    .trust-strip{background:var(--paper);border-bottom:1px solid var(--line)}
+    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .trust-item{padding:26px 22px;border-right:1px solid var(--line)}
+    .trust-item:last-child{border-right:0}
+    .trust-item strong{display:block;font-family:var(--display);font-size:1.65rem;margin-bottom:2px}
+    .trust-item span{font-size:.88rem;color:var(--muted)}
+
+    section{padding:110px 0}
+    .story-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:90px;align-items:start}
+    .story-sticky{position:sticky;top:120px}
+    .story-block{border-top:1px solid var(--line);padding:28px 0;display:grid;grid-template-columns:76px 1fr;gap:18px}
+    .story-num{font-family:var(--display);font-size:2.6rem;color:var(--tomato)}
+    .story-block h3{margin:0 0 8px;font-size:1.28rem}
+    .story-block p{margin:0;color:#6c6055}
+
+    .menu-section{background:var(--paper)}
+    .menu-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:48px}
+    .menu-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:340px 280px;gap:18px}
+    .menu-card{position:relative;overflow:hidden;border-radius:var(--radius);background:#2d2018;color:#fff;min-height:220px}
+    .menu-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .menu-card:hover img{transform:scale(1.035)}
+    .menu-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(18,10,6,.86))}
+    .menu-card .content{position:absolute;z-index:2;left:24px;right:24px;bottom:22px}
+    .menu-card h3{font-family:var(--display);font-size:2rem;margin:0 0 4px}
+    .menu-card p{margin:0;color:#f0dfd2;max-width:540px}
+    .menu-card.feature{grid-row:1 / 3}
+    .menu-card.categories{background:var(--tomato);padding:30px;display:flex;flex-direction:column;justify-content:space-between}
+    .menu-card.categories:after{display:none}
+    .cat-list{display:flex;flex-wrap:wrap;gap:9px}
+    .cat{padding:10px 13px;border:1px solid rgba(255,255,255,.45);border-radius:999px;font-size:.88rem}
+    .categories .content-static h3{font-family:var(--display);font-size:2.4rem;margin:0 0 10px}
+    .categories .content-static p{color:#ffe9df}
+
+    .proof{background:#ebe0cf}
+    .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+    .proof-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .proof-card{background:var(--paper);padding:28px;border-radius:20px;border:1px solid rgba(23,17,12,.08)}
+    .proof-card strong{font-family:var(--display);font-size:2.35rem;display:block;color:var(--tomato);line-height:1}
+    .proof-card span{display:block;color:#6d6156;margin-top:8px}
+    .quote{grid-column:1/3;background:var(--ink);color:white;padding:32px;border-radius:20px}
+    .quote p{font-family:var(--display);font-size:1.65rem;line-height:1.25;margin:0 0 12px}
+    .quote small{color:#cdbfb4}
+
+    .visit{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+    .visit:before{content:"";position:absolute;width:440px;height:440px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-120px;top:-100px;box-shadow:0 0 0 80px rgba(255,255,255,.025),0 0 0 160px rgba(255,255,255,.018)}
+    .visit-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+    .visit .lede{color:#cbbdb1}
+    .visit-card{background:#fff;color:var(--ink);border-radius:26px;padding:34px;box-shadow:var(--shadow)}
+    .visit-row{display:flex;gap:16px;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line)}
+    .visit-row:last-child{border-bottom:0}
+    .visit-row span:first-child{font-weight:800}
+    .visit-row span:last-child{text-align:right;color:#65584d}
+    .visit-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .hours{margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
+    .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px 24px;color:#d6c9bd}
+    .hours-grid strong{color:#fff}
+
+    .cta{background:var(--tomato);color:#fff;text-align:center;padding:88px 0}
+    .cta h2{font-family:var(--display);font-size:clamp(2.8rem,6vw,5.4rem);line-height:.95;letter-spacing:-.05em;margin:0 auto 20px;max-width:850px}
+    .cta p{max-width:640px;margin:0 auto 30px;color:#ffe5dc;font-size:1.1rem}
+
+    footer{background:#0d0907;color:#d5c9bf;padding:42px 0 92px}
+    .footer-grid{display:grid;grid-template-columns:1.3fr .7fr .7fr;gap:40px}
+    footer .brand{color:#fff}
+    footer h4{color:#fff;margin:0 0 12px}
+    footer p,footer a{color:#b9aca2;font-size:.92rem}
+    footer a:hover{text-decoration:underline}
+    .copyright{margin-top:38px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:.8rem;color:#84786e}
+    .mobile-order{display:none;position:fixed;left:14px;right:14px;bottom:14px;z-index:70;background:var(--tomato);color:#fff;border-radius:999px;padding:15px 20px;text-align:center;font-weight:900;box-shadow:0 12px 40px rgba(0,0,0,.28)}
+    .skip{position:absolute;left:-9999px;top:auto}.skip:focus{left:12px;top:12px;z-index:100;background:#fff;color:#111;padding:10px;border-radius:8px}
+
+    @media (max-width: 900px){
+      .nav-links{display:none;position:absolute;left:20px;right:20px;top:78px;background:var(--paper);padding:18px;border-radius:18px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}
+      .nav-links.open{display:flex}.nav-toggle{display:block}.nav .btn-primary{display:none}
+      .hero-grid,.story-grid,.proof-grid,.visit-grid{grid-template-columns:1fr}.hero-grid{padding-top:48px;gap:40px}.hero{min-height:auto}.hero-visual{min-height:520px}.photo-frame{inset:0 0 0 20px}.award-card{left:4px}
+      .trust-grid{grid-template-columns:1fr 1fr}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .story-sticky{position:static}.menu-grid{grid-template-columns:1fr 1fr;grid-template-rows:360px 280px 280px}.menu-card.feature{grid-column:1/3;grid-row:auto}.menu-card.categories{grid-column:1/3}
+      .menu-head{align-items:start;flex-direction:column}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/3}
+    }
+    @media (max-width: 620px){
+      .wrap{width:min(100% - 28px,1180px)}.topbar span:last-child{display:none}.topbar .wrap{justify-content:center}
+      .hero h1{font-size:clamp(3.6rem,18vw,5.4rem)}.hero-visual{min-height:420px}.photo-frame{left:0;border-radius:130px 130px 24px 24px}.award-card{width:205px;bottom:18px}.hero-facts{font-size:.88rem}
+      section{padding:78px 0}.trust-grid{grid-template-columns:1fr 1fr}.trust-item{padding:20px 16px}.trust-item strong{font-size:1.35rem}
+      .story-block{grid-template-columns:56px 1fr}.story-num{font-size:2rem}
+      .menu-grid{display:flex;flex-direction:column}.menu-card{min-height:300px}.menu-card.feature{min-height:500px}.menu-card.categories{min-height:260px}
+      .proof-cards{grid-template-columns:1fr}.quote{grid-column:auto}.hours-grid{grid-template-columns:1fr}.visit-row{flex-direction:column;gap:6px}.visit-row span:last-child{text-align:left}
+      .footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.mobile-order{display:block}footer{padding-bottom:112px}
+    }
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.btn,.menu-card img{transition:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <div class="topbar"><div class="wrap"><span>Girardota, Antioquia · Domicilios y para llevar</span><span>+57 324 253 2453</span></div></div>
+  <nav class="nav" aria-label="Navegación principal">
+    <div class="wrap">
+      <a class="brand" href="#inicio" aria-label="Pizzarella Artesanal, inicio"><span class="brand-mark" aria-hidden="true"></span><strong>Pizzarella</strong></a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link" href="#menu">Sabores</a>
+        <a class="nav-link" href="#historia">Nuestra pizza</a>
+        <a class="nav-link" href="#visitanos">Visítanos</a>
+        <a class="nav-link" href="https://www.instagram.com/pizzarella_artesanal/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/573242532453?text=Hola%20Pizzarella%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+  </nav>
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Pizza artesanal · Girardota</div>
+          <h1>Sabor que <em>se queda</em> en la memoria.</h1>
+          <p class="hero-copy">Pizza artesanal, sabores con carácter y una propuesta nacida en Girardota. Ven a compartir, pide para llevar o escríbenos para domicilio.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/573242532453?text=Hola%20Pizzarella%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir ahora</a>
+            <a class="btn btn-light" href="#menu">Ver sabores</a>
+          </div>
+          <div class="hero-facts" aria-label="Datos destacados">
+            <span><i class="dot"></i>4.4/5 en Google</span>
+            <span><i class="dot"></i>Cra. 14 #7-96</span>
+            <span><i class="dot"></i>Martes cerrado</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Pizza artesanal">
+          <div class="photo-frame">
+            <img src="https://images.unsplash.com/photo-1767065603341-1c477b3e6625?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=72&w=1800" alt="Pizza artesanal recién servida" loading="eager" />
+            <span class="ref-label">Imagen de referencia</span>
+          </div>
+          <div class="award-card">
+            <div class="eyebrow">Reconocimiento local</div>
+            <div class="big">2.º lugar</div>
+            <p>Feria del Chicharrón de Girardota · 2026</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip" aria-label="Razones para visitar Pizzarella">
+      <div class="wrap trust-grid">
+        <div class="trust-item"><strong>Artesanal</strong><span>Una propuesta centrada en pizza y sabores hechos para compartir.</span></div>
+        <div class="trust-item"><strong>Local</strong><span>En el corazón de Girardota, Antioquia.</span></div>
+        <div class="trust-item"><strong>4.4★</strong><span>Valoración pública en Google.</span></div>
+        <div class="trust-item"><strong>Domicilio</strong><span>Pedidos directos al +57 324 253 2453.</span></div>
+      </div>
+    </div>
+
+    <section id="historia">
+      <div class="wrap story-grid">
+        <div class="story-sticky">
+          <div class="eyebrow">Nuestra forma de hacer pizza</div>
+          <h2 class="section-title">Crocante, generosa y con identidad propia.</h2>
+          <p class="lede">La propuesta de Pizzarella combina pizza artesanal con sabores reconocibles de la región y opciones para distintos antojos.</p>
+        </div>
+        <div>
+          <article class="story-block"><div class="story-num">01</div><div><h3>Masa artesanal</h3><p>Una de las pizzas presentadas por Pizzarella en Pizza Master 2025 se elaboró sobre masa artesanal delgada con doble cocción, buscando una textura crocante y ligera.</p></div></article>
+          <article class="story-block"><div class="story-num">02</div><div><h3>Sabores que mezclan lo clásico y lo local</h3><p>La casa ha participado con propuestas como Bacon Suprema, con chicharrón, pepperoni, madurito y salsa de tocineta, y Pizarrona, una pizza con chicharrón reconocida en la feria local.</p></div></article>
+          <article class="story-block"><div class="story-num">03</div><div><h3>Más que pizza</h3><p>Además de pizzas, la oferta pública de Pizzarella incluye hamburguesas, perros y calzone, con servicio para comer en el lugar, llevar o pedir a domicilio.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section" id="menu">
+      <div class="wrap">
+        <div class="menu-head">
+          <div><div class="eyebrow">Qué pedir</div><h2 class="section-title">Dos pizzas con historia. Y mucho más.</h2></div>
+          <a class="btn btn-outline" href="https://wa.me/573242532453?text=Hola%20Pizzarella%2C%20%C2%BFme%20comparten%20la%20carta%20actual%3F" target="_blank" rel="noopener">Pedir la carta actual</a>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-card feature">
+            <img src="https://images.unsplash.com/photo-1761315632025-f8e70bf25c62?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=72&w=1400" alt="Pizza artesanal con toppings" loading="lazy" />
+            <span class="ref-label">Imagen de referencia</span>
+            <div class="content"><div class="eyebrow" style="color:#ffd17b">Pizza Master 2025</div><h3>Bacon Suprema</h3><p>Masa artesanal delgada de doble cocción, salsa napolitana, mozzarella, madurito, chicharrón empanizado, pepperoni, salsa de tocineta, cilantro y crocante de puerro.</p></div>
+          </article>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1662037983116-f72aa01bdf40?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=72&w=1200" alt="Pizza artesanal con vegetales y queso" loading="lazy" />
+            <span class="ref-label">Imagen de referencia</span>
+            <div class="content"><div class="eyebrow" style="color:#ffd17b">Feria del Chicharrón 2024</div><h3>Pizarrona</h3><p>Una pizza con chicharrón que llevó a Pizzarella al podio de la feria gastronómica de Girardota.</p></div>
+          </article>
+          <article class="menu-card categories">
+            <div class="content-static"><div class="eyebrow" style="color:#ffe1d9">También encuentras</div><h3>Antojos para todos</h3><p>Consulta disponibilidad y carta actual por WhatsApp.</p></div>
+            <div class="cat-list"><span class="cat">Pizzas</span><span class="cat">Hamburguesas</span><span class="cat">Perros</span><span class="cat">Calzone</span><span class="cat">Domicilio</span></div>
+          </article>
+          <article class="menu-card">
+            <img src="https://images.unsplash.com/photo-1763478156659-3ceea42dde74?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=72&w=1200" alt="Pizzero presentando una pizza artesanal" loading="lazy" />
+            <span class="ref-label">Imagen de referencia</span>
+            <div class="content"><h3>Para compartir</h3><p>Un plan sencillo: pizza, mesa y buena compañía en Girardota.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="wrap proof-grid">
+        <div>
+          <div class="eyebrow">Reconocida en Girardota</div>
+          <h2 class="section-title">Una pizzería local que compite con sabor.</h2>
+          <p class="lede">Pizzarella ha aparecido en eventos gastronómicos locales y nacionales, y mantiene una valoración pública de 4.4/5 en Google.</p>
+        </div>
+        <div class="proof-cards">
+          <div class="proof-card"><strong>2.º</strong><span>Feria del Chicharrón de Girardota, edición 2026.</span></div>
+          <div class="proof-card"><strong>3.º</strong><span>Feria del Chicharrón 2024 con la Pizarrona.</span></div>
+          <div class="quote"><p>“Una pizza deliciosa. Fuimos a la del chicharrón y la del Pizza Master y muy bien las dos.”</p><small>Reseña pública de cliente en Google, mostrada por Restaurant Guru</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="visitanos">
+      <div class="wrap visit-grid">
+        <div>
+          <div class="eyebrow" style="color:#efb54c">Ven o pide a domicilio</div>
+          <h2 class="section-title">Tu próxima pizza está en Carrera 14.</h2>
+          <p class="lede">Estamos en Girardota. Consulta la carta, pide a domicilio o confirma disponibilidad por WhatsApp antes de venir.</p>
+          <div class="hours" aria-label="Horarios">
+            <div class="hours-grid">
+              <span><strong>Lunes</strong> 12:00–22:00</span><span><strong>Martes</strong> Cerrado</span>
+              <span><strong>Miércoles</strong> 15:00–22:00</span><span><strong>Jueves</strong> 15:00–22:00</span>
+              <span><strong>Viernes</strong> 15:00–23:00</span><span><strong>Sábado</strong> 15:00–23:00</span>
+              <span><strong>Domingo</strong> 12:00–22:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="visit-card">
+          <div class="eyebrow">Pizzarella Artesanal Girardota</div>
+          <div class="visit-row"><span>Dirección</span><span>Cra. 14 #7-96<br>Girardota, Antioquia</span></div>
+          <div class="visit-row"><span>Teléfono</span><span>+57 324 253 2453</span></div>
+          <div class="visit-row"><span>Instagram</span><span>@pizzarella_artesanal</span></div>
+          <div class="visit-row"><span>Servicios</span><span>Comer en el lugar · Para llevar · Domicilio</span></div>
+          <div class="visit-actions">
+            <a class="btn btn-primary" href="https://wa.me/573242532453?text=Hola%20Pizzarella%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&query=Cra.%2014%20%237-96%2C%20Girardota%2C%20Antioquia%2C%20Colombia" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap"><h2>¿Qué se te antoja hoy?</h2><p>Escríbenos y te compartimos la carta disponible para que armes tu pedido.</p><a class="btn btn-light" href="https://wa.me/573242532453?text=Hola%20Pizzarella%2C%20quiero%20ver%20la%20carta%20y%20hacer%20un%20pedido" target="_blank" rel="noopener">Hablar con Pizzarella</a></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div><a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true"></span><strong>Pizzarella</strong></a><p style="max-width:430px;margin-top:16px">Pizza artesanal y sabores para compartir en Girardota, Antioquia.</p></div>
+      <div><h4>Contacto</h4><p><a href="tel:+573242532453">+57 324 253 2453</a></p><p><a href="https://www.instagram.com/pizzarella_artesanal/" target="_blank" rel="noopener">@pizzarella_artesanal</a></p></div>
+      <div><h4>Ubicación</h4><p>Cra. 14 #7-96<br>Girardota, Antioquia<br>Colombia</p></div>
+    </div>
+    <div class="wrap copyright"><span>© 2026 Pizzarella Artesanal.</span><span>Imágenes gastronómicas de referencia usadas únicamente para este prototipo.</span></div>
+  </footer>
+
+  <a class="mobile-order" href="https://wa.me/573242532453?text=Hola%20Pizzarella%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle?.addEventListener('click',()=>{
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    navLinks?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      navLinks.classList.remove('open'); toggle?.setAttribute('aria-expanded','false'); if(toggle) toggle.textContent='☰';
+    }));
+  </script>
+</body>
+</html>
